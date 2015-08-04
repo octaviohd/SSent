@@ -13,29 +13,29 @@ import Foundation
 // words that together refer to a single concept.  Examples: cut, cut off,
 // supply, demand, gross domestic product, central bank, saudi arabia.
 class LexicalItem {
-    // lexical item as it appears in the text
+    // Lexical item as it appears in the text.
     var item: String
-    // zero-based, indicates order of lexical item in text
+    // Zero-based, indicates order of lexical item in text.
     var index: Int
-    // lexical item's part of speech, e.g. noun
+    // Lexical item's part of speech, e.g. noun.
     var partOfSpeech: PartOfSpeech
-    // sentiment side of the text where the lexical item is being used
+    // Sentiment side of the text where the lexical item is being used.
     var sentSide: SentSide
-    // sentiment side context of the text where the lexical item is being used
+    // Sentiment side context of the text where the lexical item is being used.
     var sentSideCtx: SentSideCtx
-    // category of the lexical item, e.g. relevant, negator, etc.
+    // Category of the lexical item, e.g. relevant, negator, etc.
     var category: Category
-    // semantic orientation value of the lexical item
+    // Semantic orientation value of the lexical item.
     var soValue: Double
-    // set to true if the lexical item is negated by another one
+    // Set to true if the lexical item is negated by another one.
     var isNegated: Bool
-    // set to true if the lexical item is amplified by another one
+    // Set to true if the lexical item is amplified by another one.
     var isAmplified: Bool
-    // set to true if the lexical item is downtoned by another one
+    // Set to true if the lexical item is downtoned by another one.
     var isDowntoned: Bool
-    // set to true if the lexical item must be considered for the text score
+    // Set to true if the lexical item must be considered for the text score.
     var isConsidered: Bool
-    // initialiser
+    // Initialiser
     init(item: String) {
         self.item = item
         self.index = 0
@@ -54,21 +54,49 @@ class LexicalItem {
 // Instances of this class represent a sentence within a document.  A sentence
 // ends whenever there is full-stop/period punctuation mark.
 class Sentence {
-    // sentence as it appears in the text
+    // Sentence as it appears in the text.
     var asIs: String
-    // array of LexicalItem instances, 1 instance per item in the sentence
+    // Array of LexicalItem instances, 1 instance per item in the sentence.
     var lexicalItems: [LexicalItem]
-    // dictionary of boolean values to indicate the presence of sentiment side contexts in the sentence
+    // Dictionary of boolean values to indicate the presence of sentiment side contexts in the sentence.
     var sentSideCtxFlags: [SentSideCtx:Bool]
-    // bullish score of the sentence according to its lexical items
+    // Bullish score of the sentence according to its lexical items.
     var bullishScore: Double
-    // bearish score of the sentence according to its lexical items
+    // Bearish score of the sentence according to its lexical items.
     var bearishScore: Double
-    // initialiser
+    // Initialiser
     init(original: String) {
         self.asIs = original
         self.lexicalItems = [LexicalItem]()
         self.sentSideCtxFlags = [SentSideCtx.PositiveIndicator:false, SentSideCtx.NegativeIndicator:false]
+        self.bullishScore = 0.0
+        self.bearishScore = 0.0
+    }
+}
+
+// Instances of this class represent a news article.
+class News {
+    // Title of the news article.
+    var title: String
+    // Publication date of the news article in the form YYYYMMDD
+    var publicationDate: String
+    // URL where this article can be found.
+    var url: String
+    // Array of String instances, each string representing a sentence.
+    var asIs: [String]
+    // Array of Sentence instances, each instance representing a sentence.
+    var sentences: [Sentence]
+    // Bullish score of the document according to its lexical items.
+    var bullishScore: Double
+    // Bearish score of the document according to its lexical items.
+    var bearishScore: Double
+    // Initialiser
+    init () {
+        self.title = ""
+        self.publicationDate = ""
+        self.url = ""
+        self.asIs = [String]()
+        self.sentences = [Sentence]()
         self.bullishScore = 0.0
         self.bearishScore = 0.0
     }
