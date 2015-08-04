@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FBCE418B1B714DC800A48B52 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCE418A1B714DC800A48B52 /* main.swift */; };
-		FBCE41921B714E9800A48B52 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCE41911B714E9800A48B52 /* Enumerations.swift */; };
 		FBCE41941B714ED000A48B52 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCE41931B714ED000A48B52 /* TextModel.swift */; };
+		FBCE41961B714F6600A48B52 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCE41951B714F6600A48B52 /* Enumerations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,8 +27,8 @@
 /* Begin PBXFileReference section */
 		FBCE41871B714DC800A48B52 /* SSent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SSent; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCE418A1B714DC800A48B52 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		FBCE41911B714E9800A48B52 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enumerations.swift; path = ../Enumerations.swift; sourceTree = "<group>"; };
 		FBCE41931B714ED000A48B52 /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		FBCE41951B714F6600A48B52 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +61,9 @@
 		FBCE41891B714DC800A48B52 /* SSent */ = {
 			isa = PBXGroup;
 			children = (
-				FBCE41911B714E9800A48B52 /* Enumerations.swift */,
 				FBCE41931B714ED000A48B52 /* TextModel.swift */,
 				FBCE418A1B714DC800A48B52 /* main.swift */,
+				FBCE41951B714F6600A48B52 /* Enumerations.swift */,
 			);
 			path = SSent;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			files = (
 				FBCE41941B714ED000A48B52 /* TextModel.swift in Sources */,
 				FBCE418B1B714DC800A48B52 /* main.swift in Sources */,
-				FBCE41921B714E9800A48B52 /* Enumerations.swift in Sources */,
+				FBCE41961B714F6600A48B52 /* Enumerations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
