@@ -36,7 +36,7 @@ class LexicalItem {
     // set to true if the lexical item must be considered for the text score
     var isConsidered: Bool
     // initialiser
-    init(item: String ) {
+    init(item: String) {
         self.item = item
         self.index = 0
         self.partOfSpeech = PartOfSpeech.None
@@ -48,5 +48,28 @@ class LexicalItem {
         self.isAmplified = false
         self.isDowntoned = false
         self.isConsidered = false
+    }
+}
+
+// Instances of this class represent a sentence within a document.  A sentence
+// ends whenever there is full-stop/period punctuation mark.
+class Sentence {
+    // sentence as it appears in the text
+    var asIs: String
+    // array of LexicalItem instances, 1 instance per item in the sentence
+    var lexicalItems: [LexicalItem]
+    // dictionary of boolean values to indicate the presence of sentiment side contexts in the sentence
+    var sentSideCtxFlags: [SentSideCtx:Bool]
+    // bullish score of the sentence according to its lexical items
+    var bullishScore: Double
+    // bearish score of the sentence according to its lexical items
+    var bearishScore: Double
+    // initialiser
+    init(original: String) {
+        self.asIs = original
+        self.lexicalItems = [LexicalItem]()
+        self.sentSideCtxFlags = [SentSideCtx.PositiveIndicator:false, SentSideCtx.NegativeIndicator:false]
+        self.bullishScore = 0.0
+        self.bearishScore = 0.0
     }
 }
